@@ -1,4 +1,4 @@
-package com.expressionparser.main.constants;
+package com.expressionparser.main.constants.enums;
 
 public enum Range {
     MINUTE(0,59),

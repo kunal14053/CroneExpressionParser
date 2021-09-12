@@ -1,4 +1,4 @@
-package com.expressionparser.main.dto;
+package com.expressionparser.main.domain;
 
 import lombok.Getter;
 import lombok.Setter;

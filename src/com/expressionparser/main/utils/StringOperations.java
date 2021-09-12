@@ -1,16 +1,9 @@
 package com.expressionparser.main.utils;
 
 
-import com.expressionparser.main.constants.Range;
-import com.expressionparser.main.dto.InputExpression;
+import com.expressionparser.main.constants.enums.Range;
 
 public class StringOperations {
-
-    public static InputExpression getExpressionObject(String input){
-        String[] components = input.split("\\s+");
-        return new InputExpression(components[5], components[0], components[1],
-                components[2],components[3], components[4]);
-    }
 
     public static String getRange(String input){
         String[] components = input.split("-");
@@ -40,6 +33,4 @@ public class StringOperations {
             result += i+" ";
         return result;
     }
-
-
 }
