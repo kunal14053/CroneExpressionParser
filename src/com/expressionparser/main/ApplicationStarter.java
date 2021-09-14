@@ -4,18 +4,24 @@ package com.expressionparser.main;
 import com.expressionparser.main.service.ExpressionParseService;
 import com.expressionparser.main.utils.Validate;
 
+import java.util.Scanner;
+
 import static com.expressionparser.main.domain.InputExpression.getInputExpression;
 
 public class ApplicationStarter {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello customer\n");
-        if (args.length != 1) {
-            System.out.println("Argument is either empty or more than one");
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter the Crone Expression: ");
+        String str= sc.nextLine();
+
+        if (str.isEmpty()) {
+            System.out.println("Expression is empty or null");
+            System.exit(0);
         }
 
-        String input = args[0].trim();
+        String input = str.trim();
 
         if (Validate.validateInputString(input)) {
             try {
