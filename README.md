@@ -16,23 +16,23 @@ Crone expression takes in the below fileds:
 
 minute hour day_of_month month day_of _week commad_to_run
 
-*	any value , and below is how they are treated
+### *	any value , and below is how they are treated
 * for minute -> "Every Minute"
 * for hour -> "Every Hour"
 * for day of month -> "Every Day Of Month"
 * for month -> "Every Month of Year"
 * for day of week -> "Every Day Of Week"
 
-,	value list separator
+### ,	value list separator
 for instance 1,2,3,4,5 
 
--	range of values
+### range of values
 for instance 1-20
 
-/	step values
+### /	step values
 for instance */12, we can only have * as the numerator in the step function
 
-Below are the valid ranges for various fields
+### Below are the valid ranges for various fields
 minute -> 0 to 59
 houe ->  0 to 23
 day of month ->  1 to 31
