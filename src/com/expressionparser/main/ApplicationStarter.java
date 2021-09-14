@@ -2,11 +2,12 @@ package com.expressionparser.main;
 
 
 import com.expressionparser.main.service.ExpressionParseService;
-import com.expressionparser.main.utils.Validate;
+
 
 import java.util.Scanner;
 
-import static com.expressionparser.main.domain.InputExpression.getInputExpression;
+import static com.expressionparser.main.constants.Constants.INVALID_EXPRESSION;
+
 
 public class ApplicationStarter {
 
@@ -16,21 +17,14 @@ public class ApplicationStarter {
         System.out.print("Enter the Crone Expression: ");
         String str= sc.nextLine();
 
-        if (str.isEmpty()) {
+        if (str!=null && str.isEmpty()) {
             System.out.println("Expression is empty or null");
             System.exit(0);
         }
 
         String input = str.trim();
+        String output = ExpressionParseService.getInstance().parse(input);
+        System.out.println(output);
 
-        if (Validate.validateInputString(input)) {
-            try {
-                System.out.println(ExpressionParseService.getInstance().parse(getInputExpression(input)));
-            } catch (Exception e) {
-                System.out.println("Exception occurred: " + e.getMessage());
-            }
-        } else {
-            System.out.println("The input expression is not valid");
-        }
     }
 }

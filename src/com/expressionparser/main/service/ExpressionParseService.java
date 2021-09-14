@@ -4,6 +4,10 @@ import com.expressionparser.main.constants.enums.Range;
 import com.expressionparser.main.domain.InputExpression;
 import com.expressionparser.main.domain.OutputExpression;
 import com.expressionparser.main.parser.factory.ParserFactory;
+import com.expressionparser.main.utils.Validate;
+
+import static com.expressionparser.main.constants.Constants.INVALID_EXPRESSION;
+import static com.expressionparser.main.domain.InputExpression.getInputExpression;
 
 
 public class ExpressionParseService {
@@ -17,12 +21,18 @@ public class ExpressionParseService {
     }
 
 
-    public String parse(InputExpression inputExpression) throws Exception {
-        try {
-            OutputExpression output = getOutputExpression(inputExpression);
-            return output.toString();
-        } catch (Exception e) {
-            throw e;
+    public String parse(String inputExpression) {
+
+        if (Validate.validateInputString(inputExpression)) {
+            try {
+                OutputExpression output = getOutputExpression(getInputExpression(inputExpression));
+                return output.toString();
+            } catch (Exception e) {
+                System.out.println("Exception occurred: " + e.getMessage());
+                return INVALID_EXPRESSION;
+            }
+        } else {
+            return INVALID_EXPRESSION;
         }
     }
 

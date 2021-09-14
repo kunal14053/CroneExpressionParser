@@ -11,4 +11,5 @@ public class Constants {
     public static List<String> DAYS_OF_WEEK = Arrays.asList("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
     public static List<String> MONTH = Arrays.asList("JAN","FEB","MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP",
             "OCT", "NOV", "DEC");
+    public static String INVALID_EXPRESSION = "The input expression is not valid";
 }

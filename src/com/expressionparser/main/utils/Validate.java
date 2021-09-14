@@ -9,7 +9,7 @@ import static com.expressionparser.main.constants.Constants.LENGTH_OF_EXPRESSION
 public class Validate {
 
     public static boolean validateInputString (String expression){
-        if(!expression.isEmpty()) {
+        if(expression!=null && !expression.isEmpty()) {
             String[] components = expression.split("\\s+");
             return components.length == LENGTH_OF_EXPRESSION;
         }
@@ -17,7 +17,8 @@ public class Validate {
     }
 
     public static boolean validateCommand(String command) {
-        return command.isEmpty() == false;
+
+        return command!=null && command.isEmpty() == false;
     }
 
 
